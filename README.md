@@ -1,1 +1,1 @@
-# laravel-crud-news
+laravel-crud-news
