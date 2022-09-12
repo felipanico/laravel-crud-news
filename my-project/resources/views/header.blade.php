@@ -186,16 +186,25 @@ td {
     background-color: #FEEFB3;
     background-image: url('https://i.imgur.com/Z8q7ww7.png');
   }
-  .error{
+  .error {
     color: #D8000C;
     background-color: #FFBABA;
     background-image: url('https://i.imgur.com/GnyDvKN.png');
   }
-  .validation{
+  .validation {
     color: #D63301;
     background-color: #FFCCBA;
     background-image: url('https://i.imgur.com/GnyDvKN.png');
-  }	
+  }
+  
+  .input-size {
+    width: 63%;
+  }
+
+  .td-center {
+    text-align: center !important;
+  }
+
 </style>
 <div class="table-users">
     <table cellspacing="0">
@@ -206,3 +215,8 @@ td {
       </tr>
     </table>
 </div>
+@if ($message = Session::get('success'))
+  <div align="center" class="success">
+    <strong>{{ $message }}</strong>
+  </div>
+@endif

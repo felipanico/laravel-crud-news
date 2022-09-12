@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [NewsController::class, 'index'])->name('home');
-Route::get('/news/create', [NewsController::class, 'create'])->name('create.news');
+Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
+Route::post('/news/save', [NewsController::class, 'save'])->name('news.save');
 
-Route::get('/category/create', [CategoryController::class, 'create'])->name('create.category');
-Route::post('/category/save', [CategoryController::class, 'save'])->name('save.category');
+Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('/category/save', [CategoryController::class, 'save'])->name('category.save');

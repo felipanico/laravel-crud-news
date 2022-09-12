@@ -1,4 +1,9 @@
 @include('header')
+@if ($errors->category->first('name'))
+  <div align="center" class="error">
+    {{ $errors->category->first('name') }}
+  </div>
+@endif
 <div class="table-users">
   <div class="header">Category</div>
     <table cellspacing="0">
@@ -17,9 +22,4 @@
         </tr>
       </form>
     </table>
-    @if ($errors->category->first('name'))
-      <div align="center" class="error">
-        {{ $errors->category->first('name') }}
-      </div>
-    @endif
 </div>
