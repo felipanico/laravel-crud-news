@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [NewsController::class, 'home']);
+Route::get('/', [NewsController::class, 'index'])->name('home');
+Route::get('/news/create', [NewsController::class, 'create'])->name('create.news');
+
+Route::get('/category/create', [CategoryController::class, 'create'])->name('create.category');
+Route::post('/category/save', [CategoryController::class, 'save'])->name('save.category');
