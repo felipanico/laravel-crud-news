@@ -20,11 +20,13 @@
 
 git clone git@github.com:felipanico/laravel-crud-news.git
 
-cp .env.example .env #Define DB_PASSWORD
+cp .env.example .env
 
 cd ./laravel-crud-news/docker/web
 
-docker-compose up --build
+docker-compose build --no-cache
+
+docker-compose up
 
 cd ./laravel-crud-news
 
@@ -45,7 +47,7 @@ exit #container
 
 docker-compose exec --user app web bash
 
-php composer install
+composer install
 
 php artisan migrate
 
