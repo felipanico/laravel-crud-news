@@ -1,16 +1,16 @@
 ## About
 
-- Laravel Crud News is a system for practice docker and laravel 9.0
+- Laravel Crud News is a system for practice docker containerization and laravel 9.0.
 
-- Features: Search and register news, register categories
+- Features: Search and register news, register categories.
 
 ## Requirements
 
-- Docker
+- Docker 
 
 - Docker compose
 
-- [Laravel packaged by Bitnami](https://hub.docker.com/r/bitnami/laravel)
+- Docker image: php:8.1-apache-buster
 
 - [Laravel ^9.19 ](https://laravel.com/docs/9.x)
 
@@ -18,17 +18,37 @@
 
 ```bash
 
-docker pull bitnami/laravel
-
 git clone git@github.com:felipanico/laravel-crud-news.git
 
-cd laravel-crud-news/my-project
+cd laravel-crud-news/docker/web
+
+docker-compose up --build
 
 cp .env.example .env
 
-docker-compose exec myapp php composer install
+docker-compose exec database bash
 
-docker-compose exec myapp php artisan migrate
+mysql -u root -p[PASSWORD env file]
+
+```
+
+```mysql
+create database homestead;
+```
+
+exit; #mysql
+
+exit #container
+
+docker-compose exec --user app web bash
+
+php composer install
+
+php artisan migrate
+
+php artisan key:generate
+
+exit
 
 ```
 
