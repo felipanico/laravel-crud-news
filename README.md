@@ -36,6 +36,7 @@ mysql -u root -p[PASSWORD env file]
 create database homestead;
 ```
 
+```bash
 exit; #mysql
 
 exit #container
