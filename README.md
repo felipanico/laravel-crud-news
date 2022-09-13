@@ -20,15 +20,17 @@
 
 git clone git@github.com:felipanico/laravel-crud-news.git
 
-cd laravel-crud-news/docker/web
+cp .env.example .env #Define DB_PASSWORD
+
+cd ./laravel-crud-news/docker/web
 
 docker-compose up --build
 
-cp .env.example .env
+cd ./laravel-crud-news
 
 docker-compose exec database bash
 
-mysql -u root -p[PASSWORD env file]
+mysql -u root -p[DB_PASSWORD_env_file]
 
 ```
 
@@ -52,6 +54,8 @@ php artisan key:generate
 exit
 
 ```
+
+Open in your browser: http://127.0.0.1:10000/
 
 ## Patterns
 

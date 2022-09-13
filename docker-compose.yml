@@ -12,7 +12,7 @@ services:
     - ./:/var/www/html
 
   database:
-    image: mariadb
+    image: mysql
     restart: always
     ports:
     - 33061:3306
