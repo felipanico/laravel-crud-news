@@ -16,23 +16,27 @@
 
 ## Install
 
-- docker pull bitnami/laravel
+```bash
 
-- git clone git@github.com:felipanico/laravel-crud-news.git
+docker pull bitnami/laravel
 
-- cd laravel-crud-news/my-project
+git clone git@github.com:felipanico/laravel-crud-news.git
 
-- cp .env.example .env
+cd laravel-crud-news/my-project
 
-- docker-compose exec myapp php composer install
+cp .env.example .env
 
-- docker-compose exec myapp php artisan migrate
+docker-compose exec myapp php composer install
+
+docker-compose exec myapp php artisan migrate
+
+```
 
 ## Patterns
 
-- This project uses Repositories and DB manager class from Laravel (does not use Models)
+- This project uses Repositories and DB manager class from Laravel (does not use models)
 
-- Controllers call Repositories directly (there is no need intermediate class for while)
+- Controllers calls Repositories directly (there is no need intermediate class for while)
 
 ## Contributing
 
